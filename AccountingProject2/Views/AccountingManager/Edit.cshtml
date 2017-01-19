@@ -1,0 +1,115 @@
+﻿@model AccountingProject2.Models.gldata
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Edit GL Account</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.accno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.accno)
+            @Html.ValidationMessageFor(model => model.accno)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.accdesp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.accdesp)
+            @Html.ValidationMessageFor(model => model.accdesp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.grp_code)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("grp_code", ViewBag.grp_code as SelectList)
+            @Html.ValidationMessageFor(model => model.grp_code)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ctrlaccno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ctrlaccno)
+            @Html.ValidationMessageFor(model => model.ctrlaccno)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.classify)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.classify)
+            @Html.ValidationMessageFor(model => model.classify)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.subclassify)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.subclassify)
+            @Html.ValidationMessageFor(model => model.subclassify)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.taxcode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.taxcode)
+            @Html.ValidationMessageFor(model => model.taxcode)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.bankaccno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.bankaccno)
+            @Html.ValidationMessageFor(model => model.bankaccno)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.subclassify)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.subclassify)
+            @Html.ValidationMessageFor(model => model.subclassify)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.contact)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.contact)
+            @Html.ValidationMessageFor(model => model.contact)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.regno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.regno)
+            @Html.ValidationMessageFor(model => model.regno)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.taxno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.taxno)
+            @Html.ValidationMessageFor(model => model.taxno)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

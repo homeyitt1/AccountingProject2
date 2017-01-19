@@ -1,0 +1,68 @@
+﻿@model IEnumerable<AccountingProject2.Models.gldata>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>GL Account</h2>
+<p>
+    @Html.ActionLink("Create", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th class="left">
+            @Html.DisplayNameFor(model => model.accno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.accdesp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.grp_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ctrlaccno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.classify)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subclassify)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.taxcode)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="left">
+                @Html.DisplayFor(modelItem => item.accno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.accdesp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.grp_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ctrlaccno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.classify)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.subclassify)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.taxcode)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.accno.Trim() }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.accno.Trim() })
+            </td>
+        </tr>
+    }
+
+</table>

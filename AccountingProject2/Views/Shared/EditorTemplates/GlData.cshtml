@@ -1,0 +1,54 @@
+﻿@model AccountingProject2.Models.GldataGlgrpEntities
+
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.gldata.accno)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.gldata.accno)
+    @Html.ValidationMessageFor(model => model.gldata.accno)
+</div>
+<div class="editor-label">
+    @Html.LabelFor(model => model.gldata.accdesp)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.gldata.accdesp)
+    @Html.ValidationMessageFor(model => model.gldata.accdesp)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.glgrp.grp_code)
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model=>model.gldata.grp_code,(IEnumerable<SelectListItem>)ViewBag.DropDownList)
+</div>
+
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.gldata.ctrlaccno)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.gldata.ctrlaccno)
+    @Html.ValidationMessageFor(model => model.gldata.ctrlaccno)
+</div>
+<div class="editor-label">
+    @Html.LabelFor(model => model.gldata.classify)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.gldata.classify)
+    @Html.ValidationMessageFor(model => model.gldata.classify)
+</div>
+<div class="editor-label">
+    @Html.LabelFor(model => model.gldata.subclassify)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.gldata.subclassify)
+    @Html.ValidationMessageFor(model => model.gldata.subclassify)
+</div>
+<div class="editor-label">
+    @Html.LabelFor(model => model.gldata.taxcode)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.gldata.taxcode)
+    @Html.ValidationMessageFor(model => model.gldata.taxcode)
+</div>

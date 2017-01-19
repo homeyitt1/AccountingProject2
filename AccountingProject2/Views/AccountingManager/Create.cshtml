@@ -1,0 +1,155 @@
+﻿@model AccountingProject2.Models.gldata
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Create Gl Account</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.accno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.accno)
+            @Html.ValidationMessageFor(model => model.accno)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.accdesp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.accdesp)
+            @Html.ValidationMessageFor(model => model.accdesp)
+        </div>
+        
+        <div class="editor-field">
+            @Html.EditorFor(model => model.accdesp2)
+            @Html.ValidationMessageFor(model => model.accdesp2)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.curr_code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.curr_code)
+            @Html.ValidationMessageFor(model => model.curr_code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.grp_code)
+        </div>
+        <div class="editor-field">
+           @*@Html.DropDownListFor(model => model.grp_code,Model.GlgroupItems)*@
+            @Html.DropDownList("grp_code",ViewBag.grp_code as SelectList)
+            @Html.ValidationMessageFor(model => model.grp_code)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ctrlaccno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ctrlaccno)
+            @Html.ValidationMessageFor(model => model.ctrlaccno)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.classify)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.classify)
+            @Html.ValidationMessageFor(model => model.classify)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.taxcode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.taxcode)
+            @Html.ValidationMessageFor(model => model.taxcode)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.terms)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.terms)
+            @Html.ValidationMessageFor(model => model.terms)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.disposal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.disposal)
+            @Html.ValidationMessageFor(model => model.disposal)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cashflow)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cashflow)
+            @Html.ValidationMessageFor(model => model.cashflow)
+        </div>
+
+        @*<div class="editor-label">
+        @Html.LabelFor(model => model.bankaccno)
+        </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.bankaccno)
+        @Html.ValidationMessageFor(model => model.bankaccno)
+    </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.subclassify)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.subclassify)
+            @Html.ValidationMessageFor(model => model.subclassify)
+        </div>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.contact)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.contact)
+            @Html.ValidationMessageFor(model => model.contact)
+        </div>*@
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.regno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.regno)
+            @Html.ValidationMessageFor(model => model.regno)
+        </div>*@
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.taxno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.taxno)
+            @Html.ValidationMessageFor(model => model.taxno)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.bankaccno)
+        </div>
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.contact)
+        </div>
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.regno)
+        </div>
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.taxno)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
